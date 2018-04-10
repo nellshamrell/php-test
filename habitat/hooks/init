@@ -9,6 +9,8 @@ ln -sf {{pkg.path}}/nginx/html {{pkg.svc_var_path}}/
 cp -n {{pkgPathFor "core/php"}}/etc/php-fpm.d/www.conf.default \
       {{pkgPathFor "core/php"}}/etc/php-fpm.d/www.conf
 
+chown hab:hab {{pkg.svc_var_path}}
+chown hab:hab {{pkg.svc_data_path}}
 # Set the correct permissions
 #chmod +x {{pkg.svc_data_path}}
 #chown -R hab:hab {{pkg.svc_data_path}}
