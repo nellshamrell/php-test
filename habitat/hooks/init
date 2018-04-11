@@ -2,6 +2,7 @@
 
 exec 2>&1
 
+cp -r /src/index.php {{pkg.svc_data_path}}
 
 ln -sf {{pkg.path}}/nginx/conf {{pkg.svc_var_path}}/
 ln -sf {{pkg.path}}/nginx/html {{pkg.svc_var_path}}/
