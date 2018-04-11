@@ -4,4 +4,6 @@ exec 2>&1
 
 exec {{pkgPathFor "core/php"}}/sbin/php-fpm --nodaemonize
 
+#exec  {{pkgPathFor "core/nginx"}}/sbin/nginx -c {{pkg.svc_config_path}}/nginx.conf
+
 #exec {{pkgPathFor "core/php"}}/sbin/php-fpm -y  {{pkgPathFor "core/php"}}/etc/php-fpm.conf

@@ -18,4 +18,4 @@ cp -n {{pkgPathFor "core/php"}}/etc/php-fpm.d/www.conf.default \
 chmod +x {{pkg.svc_data_path}}
 chown -R hab:hab {{pkg.svc_data_path}}
 
-#nginx -c {{pkg.svc_config_path}}/nginx.conf
+{{pkgPathFor "core/nginx"}}/sbin/nginx -c {{pkg.svc_config_path}}/nginx.conf
