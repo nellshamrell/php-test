@@ -11,6 +11,5 @@ cp -n {{pkgPathFor "core/php"}}/etc/php-fpm.d/www.conf.default \
       {{pkgPathFor "core/php"}}/etc/php-fpm.d/www.conf
 
 # Set the correct permissions
-chown hab:hab {{pkg.svc_var_path}}
 chmod +x {{pkg.svc_data_path}}
 chown -R hab:hab {{pkg.svc_data_path}}

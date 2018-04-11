@@ -14,5 +14,5 @@ do_build() {
 }
 
 do_install() {
-    return 0
+    cp -r "/src/index.php" "$pkg_svc_data_path"
 }
