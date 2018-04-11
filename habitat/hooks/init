@@ -4,8 +4,11 @@ exec 2>&1
 
 cp -r /src/index.php {{pkg.svc_data_path}}
 
-ln -sf {{pkg.path}}/nginx/conf {{pkg.svc_var_path}}/
-ln -sf {{pkg.path}}/nginx/html {{pkg.svc_var_path}}/
+#ln -sf {{pkg.path}}/nginx/conf {{pkg.svc_var_path}}/
+#ln -sf {{pkg.path}}/nginx/html {{pkg.svc_var_path}}/
+
+mkdir -p {{pkg.svc_var_path}}/nginx
+chown hab:hab {{pkg.svc_var_path}}
 
 # Copy the php-fpm config into position
 cp -n {{pkgPathFor "core/php"}}/etc/php-fpm.d/www.conf.default \
@@ -14,3 +17,5 @@ cp -n {{pkgPathFor "core/php"}}/etc/php-fpm.d/www.conf.default \
 # Set the correct permissions
 chmod +x {{pkg.svc_data_path}}
 chown -R hab:hab {{pkg.svc_data_path}}
+
+#nginx -c {{pkg.svc_config_path}}/nginx.conf
